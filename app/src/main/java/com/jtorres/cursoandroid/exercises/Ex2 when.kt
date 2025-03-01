@@ -24,7 +24,14 @@ fun main() {
 
     println("The movie ticket price for a person aged $child is \$${ticketPrice(child, isMonday)}.")
     println("The movie ticket price for a person aged $adult is \$${ticketPrice(adult, isMonday)}.")
-    println("The movie ticket price for a person aged $senior is \$${ticketPrice(senior, isMonday)}.")
+    println(
+        "The movie ticket price for a person aged $senior is \$${
+            ticketPrice(
+                senior,
+                isMonday
+            )
+        }."
+    )
 }
 
 fun ticketPrice(age: Int, isMonday: Boolean): Int {

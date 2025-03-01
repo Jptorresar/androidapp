@@ -20,9 +20,9 @@ fun main() {
 }
 
 fun printNotificationSummary(numberOfMessages: Int) {
-    if (numberOfMessages<100){
+    if (numberOfMessages < 100) {
         println("You have $numberOfMessages notifications")
-    }else{
+    } else {
         println("You have 99+ notifications")
     }
 }
