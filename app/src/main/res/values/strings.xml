@@ -2,4 +2,6 @@
     <string name="app_name">CursoAndroid</string>
     <string name="escribe_tu_nombre">Escribe tu nombre:</string>
     <string name="pulsame">Pulsame</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">mujer</string>
 </resources>
