@@ -1,19 +1,24 @@
 package com.jtorres.cursoandroid.calculatorimc
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.slider.RangeSlider
 import com.jtorres.cursoandroid.R
+import java.text.DecimalFormat
 
 class ImcActivity : AppCompatActivity() {
 
-    private var isMaleSelected: Boolean = true
     private lateinit var viewMale: CardView
     private lateinit var viewFemale: CardView
+    private lateinit var tvHeight: TextView
+    private lateinit var rsHeight: RangeSlider
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +36,19 @@ class ImcActivity : AppCompatActivity() {
     private fun initComponents() {
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById(R.id.rsHeight)
 
     }
 
     private fun initListeners() {
         viewMale.setOnClickListener { setGender(true) }
         viewFemale.setOnClickListener { setGender(false) }
+        rsHeight.addOnChangeListener { _, value, _ ->
+            val df = DecimalFormat("#.##")
+            val result = df.format(value)
+            tvHeight.text = "$result CM"
+        }
     }
 
     private fun setGender(gender: Boolean) {
